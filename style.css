@@ -1,9 +1,9 @@
 :root{
     --container-bg-color:#333;
-    --left-bg-color: rgba(10, 229, 245, 0.4);
-    --left-button-hover-color: rgba(9, 24, 240, 0.3);
-    --right-bg-color: rgba(241, 9, 28, 0.3);
-    --right-button-hover-color : rgba(109, 3, 3, 0.3);
+    --left-bg-color: rgba(68, 236, 248, 0.3);
+    --left-button-hover-color: rgba(10, 229, 245, 0.5);
+    --right-bg-color: rgba(126, 7, 17, 0.2);
+    --right-button-hover-color : rgba(241, 9, 28, 0.4);
     --hover-width: 75% ;
     --other-width:25%;
     --speed: 1000ms;
@@ -46,12 +46,12 @@ h1{
     transform: translateX(-50%);
 }
 
-.split.left button:hover{
+.split.left .button:hover{
     background-color: var(--left-button-hover-color);
     border-color: var(--left-button-hover-color)
 }
 
-.split.right button:hover{
+.split.right .button:hover{
     background-color: var(--right-button-hover-color);
     border-color: var(--right-button-hover-color)
 }
@@ -102,4 +102,38 @@ h1{
     transition: var(--speed) all ease-in-out;
 }
 
+.hover-left .left{
+    width: var(--hover-width);
+}
+.hover-left .right{
+    width: var(--other-width);
+}
 
+.hover-left .right:before{
+    z-index: 2;
+}
+
+.hover-right .right{
+    width: var(--hover-width);
+}
+.hover-right .left{
+    width: var(--other-width);
+}
+
+.hover-right .left:before{
+    z-index: 2;
+}
+
+@media(max-width : 800px){
+    h1{
+        font-size: 2rem;
+    }
+    .button{
+        width: 12rem;
+    }
+}
+@media(max-height:700px){
+    .button{
+        top: 70%;
+    }
+}
